@@ -35,6 +35,7 @@ const comparisonScenes = [
 const comparisonMethods = [
   { dir: "minwm", label: "minWM", suffix: "" },
   { dir: "sanaworld", label: "SANA-World", suffix: "" },
+  { dir: "alayaworld", label: "AlayaWorld", suffix: "" },
   { dir: "matrixgames", label: "MatrixGames 3.0", suffix: "" },
   { dir: "WorldKV", label: "WorldKV", suffix: "_ar" },
   { dir: "hy", label: "HY-WorldPlay 1.5", suffix: "" },

@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#05090d">
-  <meta name="description" content="GraphMem — a training-free graph retrieval and memory caching framework for consistent long-horizon video generation.">
+  <meta name="description" content="A Training-free Graph Retrieval and Memory Caching Framework for Consistent Generation.">
   <meta name="keywords" content="GraphMem, video generation, long-horizon consistency, graph retrieval, KV cache">
-  <title>GraphMem — Consistent Long-Horizon Generation</title>
+  <title>A Training-free Graph Retrieval and Memory Caching Framework for Consistent Generation</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2305090d'/%3E%3Cpath d='M15 20 32 10l17 10v24L32 54 15 44Zm17-10v22m17-12L32 32m0 22V32M15 20l17 12' fill='none' stroke='%2377f2cb' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%2377f2cb'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,21 +51,20 @@
             <span class="logo-card"><img class="logo-hkust" src="./static/logo/hkust_logo.png" alt="The Hong Kong University of Science and Technology"></span>
             <span class="logo-card"><img class="logo-tsinghua" src="./static/logo/thu_logo.png" alt="Tsinghua University"></span>
             <span class="logo-card"><img class="logo-tencent" src="./static/logo/tencent_logo.png" alt="Tencent"></span>
+            <span class="logo-card"><img class="logo-nus" src="./static/logo/nus_logo.png" alt="National University of Singapore"></span>
           </div>
           <div class="project-title-block">
-            <small>Research project / Long-horizon video generation</small>
-            <p>A Training-free Graph Retrieval and Memory Caching Framework for Consistent Generation</p>
+            <p><span>A</span> <em class="tech-key" data-text="Training-free Graph Retrieval">Training-free Graph Retrieval</em> <span>and</span> <em class="tech-key" data-text="Memory Caching">Memory Caching</em> <span>Framework for Consistent Generation</span></p>
           </div>
         </div>
 
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span class="pulse-dot"></span> Structured retrieval for long-horizon generation</div>
           <h1 id="hero-title"><span>Graph</span><em>Mem</em></h1>
 
           <div class="authors" aria-label="Authors and affiliations">
             <span class="author-label">Authors &amp; affiliations</span>
-            <p class="author-list"><span>Yinhan Zhang<sup>1,2</sup></span><span>Xianghao Kong<sup>1,2</sup></span><span>Yi He<sup>2,3</sup></span><span>Mark Feng<sup>1</sup></span><span>Yue Ma<sup>1</sup></span><span>Yeying Jin<sup>2,‡</sup></span><span>Anyi Rao<sup>1,†</sup></span></p>
-            <p class="affiliations"><span><sup>1</sup> HKUST</span><span><sup>2</sup> Tencent</span><span><sup>3</sup> Tsinghua University</span><span><sup>†</sup> Corresponding author</span><span><sup>‡</sup> Project lead</span></p>
+            <p class="author-list"><span>Yinhan Zhang<sup>1,2</sup></span><span>Xianghao Kong<sup>1,2</sup></span><span>Yi He<sup>2,3</sup></span><span>Zeqing Wang<sup>4</sup></span><span>Mark Fong<sup>1</sup></span><span>Yue Ma<sup>1,‡</sup></span><span>Yeying Jin<sup>2,†</sup></span><span>Anyi Rao<sup>1,†</sup></span></p>
+            <p class="affiliations"><span><sup>1</sup> HKUST</span><span><sup>2</sup> Tencent</span><span><sup>3</sup> Tsinghua University</span><span><sup>4</sup> NUS</span><span><sup>†</sup> Corresponding authors</span><span><sup>‡</sup> Project leader</span></p>
           </div>
 
           <p class="hero-summary">GraphMem is designed to improve access to distant, spatially relevant views while keeping the active context compact and bounded.</p>
@@ -109,21 +108,27 @@
       <div class="principle-flow reveal" data-delay="100" aria-label="GraphMem process">
         <article>
           <span class="flow-index">01</span>
-          <div class="flow-icon node-store" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b></div>
+          <div class="flow-icon node-store" aria-hidden="true">
+            <svg viewBox="0 0 96 96"><g class="icon-links"><path d="M24 27 48 48 72 24M48 48 23 71M48 48l26 23"/></g><g class="icon-frames"><rect x="7" y="14" width="28" height="23" rx="2"/><path d="m11 31 7-7 5 5 7-9"/><rect x="62" y="11" width="27" height="23" rx="2"/><path d="m66 28 6-6 5 4 7-9"/><rect x="7" y="60" width="28" height="23" rx="2"/><path d="m11 77 7-7 5 5 7-9"/><rect x="62" y="60" width="27" height="23" rx="2"/><path d="m66 77 6-6 5 4 7-9"/></g><circle class="icon-focus" cx="48" cy="48" r="8"/><circle cx="48" cy="48" r="2.5"/></svg>
+          </div>
           <h3>Organize</h3>
           <p>Generated keyframes are stored as nodes in a structured Vision Memory Graph.</p>
         </article>
         <div class="flow-arrow" aria-hidden="true">→</div>
         <article>
           <span class="flow-index">02</span>
-          <div class="flow-icon retrieve-icon" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+          <div class="flow-icon retrieve-icon" aria-hidden="true">
+            <svg viewBox="0 0 96 96"><g class="icon-links"><path d="M14 59 34 35l23 12 20-25M34 35l4 34 19-22 20 23"/></g><g class="icon-nodes"><circle cx="14" cy="59" r="4"/><circle cx="34" cy="35" r="4"/><circle cx="38" cy="69" r="4"/><circle cx="57" cy="47" r="5"/><circle cx="77" cy="22" r="4"/><circle cx="77" cy="70" r="4"/></g><circle class="search-ring" cx="57" cy="47" r="19"/><path class="search-handle" d="m71 61 15 15"/><circle class="search-hit" cx="57" cy="47" r="5"/></svg>
+          </div>
           <h3>Retrieve</h3>
           <p>Temporal, spatial, and revisit edges guide the selection of history relevant to the current view.</p>
         </article>
         <div class="flow-arrow" aria-hidden="true">→</div>
         <article>
           <span class="flow-index">03</span>
-          <div class="flow-icon cache-icon" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="flow-icon cache-icon" aria-hidden="true">
+            <svg viewBox="0 0 96 96"><g class="memory-stack"><rect x="7" y="22" width="27" height="17" rx="2"/><rect x="7" y="44" width="27" height="17" rx="2"/><rect x="7" y="66" width="27" height="17" rx="2"/></g><path class="inject-arrow" d="M39 52h21m-7-8 8 8-8 8"/><g class="model-layers"><rect x="66" y="13" width="22" height="70" rx="3"/><path d="M70 27h14M70 41h14M70 55h14M70 69h14"/></g><path class="cache-fill" d="M70 46h14v19H70z"/></svg>
+          </div>
           <h3>Inject</h3>
           <p>Selected observations are prefetched as layer-wise historical keys and values.</p>
         </article>
@@ -131,7 +136,7 @@
       <div class="metric-strip reveal">
         <div><strong>74</strong><span>video sequences</span></div>
         <div><strong>3</strong><span>evaluation views</span></div>
-        <div><strong>8</strong><span>methods compared</span></div>
+        <div><strong>9</strong><span>methods compared</span></div>
         <div><strong>Fixed</strong><span>active context budget</span></div>
       </div>
     </section>
