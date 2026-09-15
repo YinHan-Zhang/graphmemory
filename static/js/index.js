@@ -1,15 +1,13 @@
 "use strict";
 
 const showCases = [
-  ["Chemical Plant / Backtrack", "ChemicalPlantEnv_8_3420_3800_ChemicalPlantEnv_8_3420_3800_ar.mp4"],
-  ["Rome / Architectural Revisit", "Rome_4_6080_6460_Rome_4_6080_6460_ar.mp4"],
   ["New York / Long Traverse", "NYC_8_7220_7600_NYC_8_7220_7600_ar.mp4"],
   ["Ancient Temple / Orbit", "AncientTempleEnv_2_6460_6840_AncientTempleEnv_2_6460_6840_ar.mp4"],
   ["Chemical Plant / Sweep", "ChemicalPlantEnv_4_1520_1900_ChemicalPlantEnv_4_1520_1900_ar.mp4"],
   ["World Rollout / 01", "0.mp4"], ["World Rollout / 02", "3.mp4"], ["World Rollout / 03", "20.mp4"],
   ["World Rollout / 04", "21.mp4"], ["World Rollout / 05", "23.mp4"], ["World Rollout / 06", "33.mp4"],
-  ["World Rollout / 07", "79.mp4"], ["World Rollout / 08", "89.mp4"], ["World Rollout / 09", "91.mp4"],
-  ["World Rollout / 10", "98.mp4"], ["World Rollout / 11", "109.mp4"],
+  ["World Rollout / 07", "79.mp4"], ["World Rollout / 08", "91.mp4"],
+  ["World Rollout / 09", "98.mp4"], ["World Rollout / 10", "109.mp4"],
   ["Open World / A01", "0ec3730e659ab2fdbb6e1165d704754825f7fc10744be25863e18311b219c0ed.mp4"],
   ["Open World / A02", "2b660a52c63dd131f0a06543203dca9d127d883c49ecc78e6253df0685b46af2.mp4"],
   ["Open World / A03", "2dfb7fd0e0f0f36a0067b90120e8cf97e6270c7f0262fc136ae855b5009ddc50.mp4"],
