@@ -1,27 +1,52 @@
 "use strict";
 
+const perfectCases = ["1", "2", "3", "25", "70", "79", "89", "110"].map(id => [
+  `Featured Case / ${id.padStart(3, "0")}`,
+  `./case/perfect_case/${id}.mp4`
+]);
+
 const showCases = [
-  ["New York / Long Traverse", "NYC_8_7220_7600_NYC_8_7220_7600_ar.mp4"],
-  ["Ancient Temple / Orbit", "AncientTempleEnv_2_6460_6840_AncientTempleEnv_2_6460_6840_ar.mp4"],
-  ["Chemical Plant / Sweep", "ChemicalPlantEnv_4_1520_1900_ChemicalPlantEnv_4_1520_1900_ar.mp4"],
-  ["World Rollout / 01", "0.mp4"], ["World Rollout / 02", "3.mp4"], ["World Rollout / 03", "20.mp4"],
-  ["World Rollout / 04", "21.mp4"], ["World Rollout / 05", "23.mp4"], ["World Rollout / 06", "33.mp4"],
-  ["World Rollout / 07", "79.mp4"], ["World Rollout / 08", "91.mp4"],
-  ["World Rollout / 09", "98.mp4"], ["World Rollout / 10", "109.mp4"],
-  ["Open World / A01", "0ec3730e659ab2fdbb6e1165d704754825f7fc10744be25863e18311b219c0ed.mp4"],
-  ["Open World / A02", "2b660a52c63dd131f0a06543203dca9d127d883c49ecc78e6253df0685b46af2.mp4"],
-  ["Open World / A03", "2dfb7fd0e0f0f36a0067b90120e8cf97e6270c7f0262fc136ae855b5009ddc50.mp4"],
-  ["Open World / A04", "382e79123668ed71ed0b611e65674f5a51ccc4ed50c045edfb934825f0bdf493.mp4"],
-  ["Open World / A05", "6e7a3aecf61f5360c666be3dc320c7a54ffd3e9ade60199186f784bc986d5cc2.mp4"],
-  ["Open World / A06", "7851c27e942d14293b7a2448bc7e240fe95e1fd794eacada372f6b50ed195f30.mp4"],
-  ["Open World / A07", "8648650ac5d5bc560964dba7a359eb9c9bc2e3f534be0d99d2ba828f059794d4.mp4"],
-  ["Open World / A08", "8d05cafd6125bb965a1e9e91faa41c1eb8f0844b5489283693111c1fbd10f538.mp4"],
-  ["Open World / A09", "a06872316995d5bfc88e9dc98b79e9b017762739c1ff7d4bd2cb5d1a6050dad2.mp4"],
-  ["Open World / A10", "b4e577ec23310940fa5db81c4053cd56.mov"],
-  ["Open World / A11", "be48a5aefa8e2f00011540b78c442238bb1ab2ccb0f39f9f57114848012dd8c6.mp4"],
-  ["Open World / A12", "bf5a316a294b2a800ee099584a0dbd6a7cc9ad4ba313a6114d6c6e0f725ff151.mp4"],
-  ["Open World / A13", "c37895c3094f8b8c07c7724d97866627210b1db3c2856a3078c69fd309efd3e9.mp4"],
-  ["Open World / A14", "cd7acad3fac79ea97b0cb3c1851e4346997076964e77318e93bf6be9da80ccdf.mp4"]
+  ["New York / Long Traverse", "./case/show-case/NYC_8_7220_7600_NYC_8_7220_7600_ar.mp4"],
+  ["Ancient Temple / Orbit", "./case/show-case/AncientTempleEnv_2_6460_6840_AncientTempleEnv_2_6460_6840_ar.mp4"],
+  ["Chemical Plant / Sweep", "./case/show-case/ChemicalPlantEnv_4_1520_1900_ChemicalPlantEnv_4_1520_1900_ar.mp4"],
+  ["World Rollout / 01", "./case/show-case/0.mp4"],
+  ["World Rollout / 02", "./case/show-case/3.mp4"],
+  ["World Rollout / 03", "./case/show-case/20.mp4"],
+  ["World Rollout / 04", "./case/show-case/21.mp4"],
+  ["World Rollout / 05", "./case/show-case/23.mp4"],
+  ["World Rollout / 06", "./case/show-case/33.mp4"],
+  ["World Rollout / 07", "./case/show-case/79.mp4"],
+  ["World Rollout / 08", "./case/show-case/91.mp4"],
+  ["World Rollout / 09", "./case/show-case/98.mp4"],
+  ["World Rollout / 10", "./case/show-case/109.mp4"],
+  ["Open World / 01", "./case/show-case/2b660a52c63dd131f0a06543203dca9d127d883c49ecc78e6253df0685b46af2.mp4"],
+  ["Open World / 02", "./case/show-case/2dfb.mp4"],
+  ["Open World / 03", "./case/show-case/7851c27e942d14293b7a2448bc7e240fe95e1fd794eacada372f6b50ed195f30.mp4"],
+  ["Open World / 04", "./case/show-case/8648650ac5d5bc560964dba7a359eb9c9bc2e3f534be0d99d2ba828f059794d4.mp4"],
+  ["Open World / 05", "./case/show-case/a06872316995d5bfc88e9dc98b79e9b017762739c1ff7d4bd2cb5d1a6050dad2.mp4"],
+  ["Open World / 06", "./case/show-case/b4e577ec23310940fa5db81c4053cd56.mov"],
+  ["Open World / 07", "./case/show-case/be48a5aefa8e2f00011540b78c442238bb1ab2ccb0f39f9f57114848012dd8c6.mp4"],
+  ["Open World / 08", "./case/show-case/bf5a316a294b2a800ee099584a0dbd6a7cc9ad4ba313a6114d6c6e0f725ff151.mp4"],
+  ...["109", "110", "119", "138", "153", "156", "164", "196", "199", "227", "269"].map(id => [
+    `September Set / ${id}`,
+    `./case/show-case/cases_0923/${id}.mp4`
+  ])
+];
+
+const crossBackboneScenes = [
+  { id: "13", label: "Case 13" },
+  { id: "27", label: "Case 27" },
+  { id: "51", label: "Case 51" },
+  { id: "dreamxworld", label: "DreamXWorld" },
+  { id: "echowm", label: "EchoWM" },
+  { id: "hy1.5", label: "HY-WorldPlay 1.5" },
+  { id: "lingbot1.5", label: "LingBot-World 1.5" },
+  { id: "lingbotv2", label: "LingBot-World v2" }
+];
+
+const crossBackboneMethods = [
+  { dir: "baselines", label: "Baseline", note: "Original backbone" },
+  { dir: "ours", label: "GraphMem", note: "Graph memory enabled", ours: true }
 ];
 
 const comparisonScenes = [
@@ -40,21 +65,6 @@ const comparisonMethods = [
   { dir: "lingbot-1.5", label: "LingBot-World 1.5", suffix: "" },
   { dir: "lingbot-v2", label: "LingBot-World v2", suffix: "" },
   { dir: "ours", label: "GraphMem (Ours)", suffix: "_ar", ours: true }
-];
-
-const ablationScenes = [
-  { id: "ChemicalPlantEnv_8_3420_3800", label: "Chemical Plant A" },
-  { id: "ChemicalPlantEnv_2_6080_6460", label: "Chemical Plant B" },
-  { id: "Warehouse_0_3420_3800", label: "Warehouse" },
-  { id: "IslandMap_5_5320_5700", label: "Island" }
-];
-
-const ablationMethods = [
-  { dir: "queue", label: "Queue", note: "Recent context", code: "M-01" },
-  { dir: "bank", label: "Memory Bank", note: "Unstructured", code: "M-02" },
-  { dir: "ours", label: "Full GraphMem", note: "Complete model", code: "M-03", ours: true },
-  { dir: "temporal", label: "w/o Temporal", note: "Retrieval removed", code: "M-04" },
-  { dir: "spatial", label: "w/o Spatial", note: "Retrieval removed", code: "M-05" }
 ];
 
 const $ = (selector, scope = document) => scope.querySelector(selector);
@@ -95,11 +105,12 @@ function setupChrome() {
     menu.setAttribute("aria-expanded", "false");
   }));
 
-  const sections = ["showcase", "comparison", "ablation"].map(id => document.getElementById(id));
+  const sections = ["perfect-cases", "showcase", "cross-backbone", "comparison"].map(id => document.getElementById(id));
   const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      $$(".desktop-nav a").forEach(link => link.classList.toggle("active", link.hash === `#${entry.target.id}`));
+      const target = entry.target.id === "comparison" ? "#cross-backbone" : `#${entry.target.id}`;
+      $$(".desktop-nav a").forEach(link => link.classList.toggle("active", link.hash === target));
     });
   }, { rootMargin: "-35% 0px -55%" });
   sections.forEach(section => sectionObserver.observe(section));
@@ -143,21 +154,20 @@ function setupDialog() {
   };
 }
 
-function setupShowcase() {
-  const grid = $("#showcase-grid");
-  const loadButton = $("#load-more");
-  const count = $("#case-count");
-  let visible = 8;
+function setupCaseCollection(cases, options) {
+  const grid = $(options.grid);
+  const loadButton = options.loadButton ? $(options.loadButton) : null;
+  const count = options.count ? $(options.count) : null;
+  let visible = Math.min(options.initialVisible ?? cases.length, cases.length);
 
-  const makeCard = ([name, file], index) => {
+  const makeCard = ([name, src], index) => {
     const article = document.createElement("article");
-    const src = `./case/show-case/${file}`;
     article.className = "case-card";
     article.tabIndex = 0;
     article.style.animationDelay = `${Math.min(index % 8, 6) * 55}ms`;
     article.innerHTML = `<div class="case-media">
       ${videoMarkup(src, name, false)}
-      <div class="case-meta"><div><small>Case ${String(index + 1).padStart(2, "0")}</small><strong>${name}</strong></div>
+      <div class="case-meta"><div><small>${options.eyebrow} ${String(index + 1).padStart(2, "0")}</small><strong>${name}</strong></div>
       <button class="case-open" type="button" aria-label="Open ${name}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4h9v9h-2V7.4l-9.3 9.3-1.4-1.4L12.6 6H7V4Z"/></svg></button></div>
     </div>`;
     const preview = $("video", article);
@@ -170,13 +180,27 @@ function setupShowcase() {
 
   const render = () => {
     const fragment = document.createDocumentFragment();
-    for (let i = grid.children.length; i < visible; i += 1) fragment.appendChild(makeCard(showCases[i], i));
+    for (let i = grid.children.length; i < visible; i += 1) fragment.appendChild(makeCard(cases[i], i));
     grid.appendChild(fragment);
-    count.textContent = `${String(visible).padStart(2, "0")} / ${showCases.length}`;
-    if (visible >= showCases.length) loadButton.hidden = true;
+    if (count) count.textContent = `${String(visible).padStart(2, "0")} / ${cases.length}`;
+    if (loadButton && visible >= cases.length) loadButton.hidden = true;
   };
-  loadButton.addEventListener("click", () => { visible = showCases.length; render(); });
+  if (loadButton) loadButton.addEventListener("click", () => { visible = cases.length; render(); });
   render();
+}
+
+function setupShowcases() {
+  setupCaseCollection(perfectCases, {
+    grid: "#perfect-grid",
+    eyebrow: "Featured"
+  });
+  setupCaseCollection(showCases, {
+    grid: "#showcase-grid",
+    loadButton: "#load-more",
+    count: "#case-count",
+    initialVisible: 8,
+    eyebrow: "Case"
+  });
 }
 
 function renderTabs(container, scenes, selected, onSelect) {
@@ -237,21 +261,22 @@ function setupComparison() {
   render();
 }
 
-function setupAblation() {
-  const tabs = $("#ablation-tabs");
-  const grid = $("#ablation-grid");
-  const button = $("#ablation-sync");
-  let selected = ablationScenes[0].id;
+function setupCrossBackbone() {
+  const tabs = $("#cross-backbone-tabs");
+  const grid = $("#cross-backbone-grid");
+  const button = $("#cross-backbone-sync");
+  let selected = crossBackboneScenes[0].id;
   const resetSync = setupSynchronizedButton(button, grid);
 
   const render = () => {
     resetSync();
-    renderTabs(tabs, ablationScenes, selected, id => { selected = id; render(); });
-    grid.innerHTML = ablationMethods.map((method, index) => {
-      const src = `./case/ablation_case/${method.dir}/${selected}_${selected}_ar.mp4`;
-      return `<article class="ablation-card ${method.ours ? "ours" : ""}" style="animation-delay:${index * 55}ms">
-        ${videoMarkup(src, `${method.label} — ${selected}`)}
-        <div class="method-label"><div><strong>${method.label}</strong><small>${method.note}</small></div><span class="variant-code">${method.code}</span></div>
+    renderTabs(tabs, crossBackboneScenes, selected, id => { selected = id; render(); });
+    const scene = crossBackboneScenes.find(item => item.id === selected);
+    grid.innerHTML = crossBackboneMethods.map((method, index) => {
+      const src = `./case/cross_backbone_comprison_case/${method.dir}/${selected}.mp4`;
+      return `<article class="method-card ${method.ours ? "ours" : ""}" style="animation-delay:${index * 55}ms">
+        ${videoMarkup(src, `${method.label} — ${scene.label}`)}
+        <div class="method-label"><div><strong>${method.label}</strong><small>${method.note}</small></div><span class="variant-code">${scene.label}</span></div>
       </article>`;
     }).join("");
   };
@@ -262,7 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupChrome();
   setupReveal();
   setupDialog();
-  setupShowcase();
+  setupShowcases();
+  setupCrossBackbone();
   setupComparison();
-  setupAblation();
 });

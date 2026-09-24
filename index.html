@@ -10,7 +10,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2305090d'/%3E%3Cpath d='M15 20 32 10l17 10v24L32 54 15 44Zm17-10v22m17-12L32 32m0 22V32M15 20l17 12' fill='none' stroke='%2377f2cb' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%2377f2cb'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/index.css">
   <script defer src="./static/js/index.js"></script>
 </head>
@@ -28,9 +28,9 @@
       <span>GraphMem</span>
     </a>
     <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#perfect-cases">Featured</a>
       <a href="#showcase">Showcase</a>
-      <a href="#comparison">Comparison</a>
-      <a href="#ablation">Ablation</a>
+      <a href="#cross-backbone">Comparisons</a>
     </nav>
     <div class="header-actions">
       <a class="paper-link" href="./GraphMem.pdf" target="_blank" rel="noopener">Read paper <span>↗</span></a>
@@ -70,7 +70,7 @@
           <p class="hero-summary">GraphMem is designed to improve access to distant, spatially relevant views while keeping the active context compact and bounded.</p>
 
           <div class="hero-links">
-            <a class="button button-primary" href="#showcase">Explore cases <span aria-hidden="true">↓</span></a>
+            <a class="button button-primary" href="#perfect-cases">Explore cases <span aria-hidden="true">↓</span></a>
             <a class="button button-secondary" href="https://github.com/YinHan-Zhang/GraphMem" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .9A11.2 11.2 0 0 0 8.5 22.7c.6.1.8-.2.8-.5v-2.1c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5A11.2 11.2 0 0 0 12 .9Z"/></svg>
               Code
@@ -87,7 +87,7 @@
               <div class="frame-meta">CURATED / LONG HORIZON</div>
             </div>
             <video autoplay muted loop playsinline preload="metadata">
-              <source src="./case/live_demo.mp4" type="video/mp4">
+              <source src="./live_video.mp4" type="video/mp4">
             </video>
             <div class="video-scanline" aria-hidden="true"></div>
           </div>
@@ -211,26 +211,59 @@
       </div>
     </section>
 
-    <section class="showcase-section" id="showcase">
+    <section class="showcase-section" id="perfect-cases">
       <div class="section-shell">
         <div class="section-heading reveal">
           <div>
-            <p class="section-kicker">04 / Showcase</p>
-            <h2>Revisit<br><span>generation results.</span></h2>
+            <p class="section-kicker">04 / Featured cases</p>
+            <h2>Curated<br><span>long-horizon worlds.</span></h2>
           </div>
-          <p>Results include long trajectories, camera turns, and revisited regions. Hover to preview; open any case for the full sequence.</p>
+          <p>A focused selection of the strongest long-horizon generations. Hover to preview; open any case for the full sequence.</p>
         </div>
-        <div class="showcase-grid" id="showcase-grid" aria-live="polite"></div>
-        <div class="load-more-wrap">
-          <button class="load-more" id="load-more" type="button"><span>Explore all cases</span><b id="case-count">08 / 27</b></button>
+        <div class="showcase-grid" id="perfect-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="comparison-section section-shell" id="showcase">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-kicker">05 / Showcase</p>
+          <h2>Revisit<br><span>generation library.</span></h2>
         </div>
+        <p>Results span long trajectories, camera turns, revisited regions, and the latest September case set.</p>
+      </div>
+      <div class="showcase-grid" id="showcase-grid" aria-live="polite"></div>
+      <div class="load-more-wrap">
+        <button class="load-more" id="load-more" type="button"><span>Explore all cases</span><b id="case-count">08 / 32</b></button>
+      </div>
+    </section>
+
+    <section class="showcase-section" id="cross-backbone">
+      <div class="section-shell">
+        <div class="section-heading reveal">
+          <div>
+            <p class="section-kicker">06 / Cross-backbone comparison</p>
+            <h2>One memory system.<br><span>Multiple world backbones.</span></h2>
+          </div>
+          <p>Compare each original backbone directly with its GraphMem-enabled result on the same setting.</p>
+        </div>
+
+        <div class="case-controls reveal">
+          <div class="scene-tabs" id="cross-backbone-tabs" role="tablist" aria-label="Cross-backbone cases"></div>
+          <button class="sync-button" id="cross-backbone-sync" type="button">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 5 8 5-8 5V5Z"/></svg>
+            <span>Play all</span>
+          </button>
+        </div>
+        <div class="paired-comparison-grid" id="cross-backbone-grid"></div>
+        <p class="interaction-hint"><span></span>Each pair uses the same backbone and case</p>
       </div>
     </section>
 
     <section class="comparison-section section-shell" id="comparison">
       <div class="section-heading reveal">
         <div>
-          <p class="section-kicker">05 / Comparison case</p>
+          <p class="section-kicker">07 / Method comparison</p>
           <h2>Same trajectories.<br><span>Memory strategies compared.</span></h2>
         </div>
         <p>Compare every method on the identical trajectory. Start all videos together to inspect drift, structural collapse, and loop closure.</p>
@@ -245,27 +278,6 @@
       </div>
       <div class="comparison-grid" id="comparison-grid"></div>
       <p class="interaction-hint"><span></span>All methods share the same scene and camera trajectory</p>
-    </section>
-
-    <section class="ablation-section" id="ablation">
-      <div class="section-shell">
-        <div class="section-heading reveal">
-          <div>
-            <p class="section-kicker">06 / Ablation case</p>
-            <h2>Component-wise<br><span>ablation results.</span></h2>
-          </div>
-          <p>These comparisons isolate the contributions of graph organization, temporal retrieval, and spatial retrieval.</p>
-        </div>
-
-        <div class="case-controls reveal">
-          <div class="scene-tabs" id="ablation-tabs" role="tablist" aria-label="Ablation scenes"></div>
-          <button class="sync-button" id="ablation-sync" type="button">
-            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 5 8 5-8 5V5Z"/></svg>
-            <span>Play all</span>
-          </button>
-        </div>
-        <div class="ablation-grid" id="ablation-grid"></div>
-      </div>
     </section>
 
     <section class="closing-section section-shell reveal">
